@@ -15,6 +15,7 @@ app.use(function (req, res, next) {
     next()
 })
 
+
 app.use("/", allCertifies)
 
 module.exports = app
