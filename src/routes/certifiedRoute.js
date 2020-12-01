@@ -1,11 +1,9 @@
 const express = require("express")
 const router = express.Router()
+const controller = require("../controllers/certifiedController")
 
-router.get("/", function (req, res) {
-    res.status(200).send({
-        title: "Meus certificados",
-        version: "1.0.0"
-    })
-})
+
+router.get("/", controller.getAllCertifies)
+
 
 module.exports = router
