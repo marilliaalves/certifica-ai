@@ -2,7 +2,7 @@ const express = require("express")
 const router = express.Router()
 const controller = require("../controllers/certifiedController")
 
-router.post("/", controller.login)
+
 router.get("/", controller.getAllCertifies)
 router.get("/:id", controller.getById)
 router.get("/area", controller.getArea)

@@ -15,7 +15,7 @@ db.on("error", console.log.bind(console, "connection error:"))
 db.once("open", () => console.log("Succesful connection"))
 
 //routes - colocar aqui as rotas que vou usar
-const allCertifies = require("./routes/certifiedRoute")
+const certifiedModel = require("./routes/certifiedRoute")
 
 app.use(express.json())
 
@@ -29,6 +29,6 @@ app.use(function (req, res, next) {
 })
 
 
-app.use("/", allCertifies)
+app.use("/", certifiedModel)
 
 module.exports = app
