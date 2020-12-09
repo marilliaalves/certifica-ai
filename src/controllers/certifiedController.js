@@ -1,7 +1,6 @@
 const certifies = require('../models/certifiedModel')
 const  certifiedModel  = require('../models/certifiedModel')
-
-
+// const SECRET = process.env.SECRET;
 
  const getAllCertifies = (req, res) => {
      certifiedModel.find(function (err, certified) {
@@ -11,28 +10,29 @@ const  certifiedModel  = require('../models/certifiedModel')
             res.status(200).send(certified)
         }
   })
- }
+ } 
 
  const getById = (req, res) => {
-    const id = req.params.id
-    certifiedModel.find({ id }, function (err, certified) {
-        if (err) {
-            res.status(404).send('Certificado não encontrado')
-        } else {
-            res.status(200).send(certified)
-        }
-    })
+   const id = req.params.id
+   certifiedModel.find({ id }, function (err, certified) {
+       if (err) {
+           res.status(404).send('Certificado não encontrado')
+       } else {
+           res.status(200).send(certified)
+       }
+   })
 }
 
 const getArea = (req, res) => {
-    const area = req.query
+    
+    const area = req.query.area
+    console.log(area)
     certifiedModel.find(area, function (err, certified) {
         if (err) {
-            res.status(404).send('Area não encontrada')
-        } else {
-            res.status(200).send(certified)
-        }
-    })
+            res.status(501).send('Area não encontrada')
+        } 
+    }); return res.status(200).send(certified)
+    
 }
 
 //calcular tempo total 

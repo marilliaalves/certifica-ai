@@ -1,7 +1,7 @@
 const mongoose = require("mongoose")
-const mongoDB = 'mongodb://127.0.0.1:27017';
-mongoose.connect(mongoDB, {  useNewUrlParser: true,
-    useUnifiedTopology: true   });
+// const mongoDB = 'mongodb://127.0.0.1:27017';
+// mongoose.connect(mongoDB, {  useNewUrlParser: true,
+//    useUnifiedTopology: true   });
 
 const certifiesSchema = new mongoose.Schema({
     id : { type : Number },
@@ -17,6 +17,6 @@ const certifiesSchema = new mongoose.Schema({
     versionKey: false
 })
 
-const certified = new mongoose.model("certifies", certifiesSchema)
+const certified = mongoose.model("certifies", certifiesSchema)
 
 module.exports = certified
