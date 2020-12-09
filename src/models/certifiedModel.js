@@ -17,6 +17,6 @@ const certifiesSchema = new mongoose.Schema({
     versionKey: false
 })
 
-const certified = mongoose.model("certifies", certifiesSchema)
+const certifies = mongoose.model("certifies", certifiesSchema)
 
-module.exports = certified
+module.exports = certifies
