@@ -2,41 +2,27 @@ const certifies = require('../models/certifiedModel')
 // const  certifiedModel  = require('../models/certifiedModel')
 // const SECRET = process.env.SECRET;
 
- const getAllCertifies = (req, res) => {
-     certifies.find(function (err, certified) {
+const getAllCertifies = (req, res) => {
+    const area = req.query
+    certifies.find(area, function (err, certified) {
         if (err) {
             res.status(500).send({ message: err.message })
         } else {
             res.status(200).send(certified)
         }
-  })
- } 
+    })
+}
 
  const getById = (req, res) => {
-   const id = req.params.id
-   certifies.find({ id }, function (err, certified) {
-       if (err) {
-           res.status(404).send('Certificado não encontrado')
-       } else {
-           res.status(200).send(certified)
-       }
-   })
-}
-
-const getArea = (req, res) => {
-    
-    const area = req.query.area
-    console.log(area)
-    certifies.find(area, function (err, certified) {
+    const id = req.params.id
+    certifies.find({ id }, function (err, certified) {
         if (err) {
-            res.status(501).send('Area não encontrada')
-        } 
-    }); return res.status(200).send(certified)
-    
+            res.status(404).send('Certificado não encontrado')
+        } else {
+            res.status(200).send(certified)
+        }
+    })
 }
-
-//calcular tempo total 
-
 
 const getYear = (req, res) => {
     const year = req.params.year
@@ -50,35 +36,35 @@ const getYear = (req, res) => {
 }
 
 const postCertifies = (req, res) => {
-    let certifies = new certifiedModel(req.body)
+    let certifie = new certifies(req.body)
 
-    certifies.save(function(err){
+    certifie.save(function (err) {
         if (err) {
             res.status(500).send({ message: err.message })
         } else {
-            res.status(201).send({ message : 'Certificado incluído com sucesso'})
+            res.status(201).send({ message: 'Certificado incluído com sucesso' })
         }
     })
 }
 
 const putCertifies = (req, res) => {
     const id = req.params.id
-    certifies.updateMany({ id }, { $set : req.body }, { upsert : true }, function(err){
+    certifies.updateMany({ id }, { $set: req.body }, { upsert: true }, function (err) {
         if (err) {
             res.status(500).send({ message: err.message })
         } else {
-            res.status(200).send({ message : "certificado atualizado com sucesso"})
+            res.status(200).send({ message: "certificado atualizado com sucesso" })
         }
     })
 }
 
 const deleteId = (req, res) => {
     const id = req.params.id
-    certifies.deleteMany({ id }, function(err){
+    certifies.deleteOne({ id }, function (err) {
         if (err) {
             res.status(500).send({ message: err.message })
         } else {
-            res.status(200).send({ message : "certificado removido com sucesso"})
+            res.status(200).send({ message: "certificado removido com sucesso" })
         }
     })
 }
@@ -86,11 +72,9 @@ const deleteId = (req, res) => {
 
 module.exports = {
     getAllCertifies,
-    getById,
-    getArea,
+     getById,
     getYear,
     postCertifies,
     putCertifies,
     deleteId
 }
-  
