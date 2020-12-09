@@ -1,6 +1,26 @@
 const certifies = require('../models/certifiedModel')
 const  certifiedModel  = require('../models/certifiedModel')
-// const SECRET = process.env.SECRET;
+const SECRET = process.env.SECRET;
+
+const login = (req, res) => {
+    authors.findOne({ email: req.body.email }, function(error, author) {
+      if (!author) {
+        return res.status(404).send(`There is no author with this email ${req.body.email}`);
+      }
+  
+      const rightPassword = bcrypt.compareSync(req.body.password, author.password);
+  
+      if (!rightPassword) {
+        return res.status(403).send('Incorrect password!');
+      }
+  
+      const token = jwt.sign({ email: req.body.email }, SECRET);
+      return res.status(200).send(token);
+    });
+  }
+
+
+
 
  const getAllCertifies = (req, res) => {
      certifiedModel.find(function (err, certified) {
@@ -85,6 +105,7 @@ const deleteId = (req, res) => {
 
 
 module.exports = {
+    login,
     getAllCertifies,
     getById,
     getArea,

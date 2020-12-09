@@ -7,6 +7,7 @@ const certifiesSchema = new mongoose.Schema({
     id : { type : Number },
     name : { type : String},
     email: { type : String , required: true},
+    password : { type : String },
     class: { type : String },
     institution: { type : String },
     area: { type : String },
