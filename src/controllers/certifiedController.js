@@ -1,9 +1,9 @@
-// const certifies = require('../models/certifiedModel')
-const  certifiedModel  = require('../models/certifiedModel')
+const certifies = require('../models/certifiedModel')
+// const  certifiedModel  = require('../models/certifiedModel')
 // const SECRET = process.env.SECRET;
 
  const getAllCertifies = (req, res) => {
-     certifiedModel.find(function (err, certified) {
+     certifies.find(function (err, certified) {
         if (err) {
             res.status(500).send({ message: err.message })
         } else {
@@ -14,7 +14,7 @@ const  certifiedModel  = require('../models/certifiedModel')
 
  const getById = (req, res) => {
    const id = req.params.id
-   certifiedModel.find({ id }, function (err, certified) {
+   certifies.find({ id }, function (err, certified) {
        if (err) {
            res.status(404).send('Certificado não encontrado')
        } else {
@@ -27,7 +27,7 @@ const getArea = (req, res) => {
     
     const area = req.query.area
     console.log(area)
-    certifiedModel.find(area, function (err, certified) {
+    certifies.find(area, function (err, certified) {
         if (err) {
             res.status(501).send('Area não encontrada')
         } 
@@ -40,7 +40,7 @@ const getArea = (req, res) => {
 
 const getYear = (req, res) => {
     const year = req.params.year
-    certifiedModel.find({ year }, function (err, certified) {
+    certifies.find({ year }, function (err, certified) {
         if (err) {
             res.status(404).send('Não há certificados no ano informado')
         } else {
@@ -63,7 +63,7 @@ const postCertifies = (req, res) => {
 
 const putCertifies = (req, res) => {
     const id = req.params.id
-    certifiedModel.updateMany({ id }, { $set : req.body }, { upsert : true }, function(err){
+    certifies.updateMany({ id }, { $set : req.body }, { upsert : true }, function(err){
         if (err) {
             res.status(500).send({ message: err.message })
         } else {
@@ -74,7 +74,7 @@ const putCertifies = (req, res) => {
 
 const deleteId = (req, res) => {
     const id = req.params.id
-    certifiedModel.deleteMany({ id }, function(err){
+    certifies.deleteMany({ id }, function(err){
         if (err) {
             res.status(500).send({ message: err.message })
         } else {
