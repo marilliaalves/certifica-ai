@@ -15,6 +15,8 @@ db.on("error", console.log.bind(console, "connection error:"))
 db.once("open", () => console.log("Succesful connection"))
 
 //routes - colocar aqui as rotas que vou usar
+const index = require("./routes/index")
+
 const certifies = require("./routes/certifiedRoute")
 
 app.use(express.json())
@@ -28,7 +30,7 @@ app.use(function (req, res, next) {
     next()
 })
 
-
-app.use("/", certifies)
+app.use("/", index)
+app.use("/certifies", certifies)
 
 module.exports = app
