@@ -1,7 +1,7 @@
-# certifica-ai
+<h1 align="center"> Certifica Aí </h1>
+![Certifica Aí](./images/certificai.jpg)
+<p align="justify"> Sabe aquele curso que você fez e não tem ideia de onde guardou o certificado? Você poderá guardar eles em um único lugar, simples e de fácil acesso! </p>
 
-Certifica aí é uma API para guardar certificados. 
-Sabe aquele curso que você fez e não tem ideia de onde guardou o certificado? Você poderá guardar eles em um lugar seguro e simples de utilizar, ao acessar com email e nome completo, é possível listar, filtrar por mês ou ano, alterar informações e contabilizar a carga horária feita ao longo do período.
 
 Tecnologias usadas
 
