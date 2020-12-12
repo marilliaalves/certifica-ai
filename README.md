@@ -5,9 +5,9 @@
 <p align="justify"> Sabe aquele curso que você fez e não tem ideia de onde guardou o certificado? Você poderá guardar eles em um único lugar, simples e de fácil acesso! </p>
 
 
-Tecnologias usadas
+## Tecnologias usadas
 
-Git
-Node.JS
-MongoDB
+* Git
+* Node.JS
+* MongoDB
 
