@@ -22,13 +22,13 @@ O certifica aí é um projeto desenvolvido para a conclusão do bootcamp de dese
 ### Lista ordenada
 
 - [x] Faça um fork desse [repositório] no seu GitHub (https://github.com/marilliaalves/certifica-ai)
-- [x] Clone o repositório para sua máquina local - git clone <url-do-fork-repositório>
-- [x] Entre na pasta <cd certifica-ai> e crie sua branch <git checkout -b sua_branch>  
-- [x] Instale as dependências <npm install>
-- [x] Para inicializar o server dê <npm start>
-- [x] Será executado na porta 8080
-- [x] Para fazer o commit após contribuições utilize <git commit -m 'o que foi feito'>
-- [x] Suba as contribuições através do <git push origin sua_branch>
+- [x] Clone o repositório para sua máquina local - `git clone <url-do-fork-repositório>`
+- [x] Entre na pasta `<cd certifica-ai>` e crie sua branch `<git checkout -b sua_branch>`  
+- [x] Instale as dependências `<npm install>`
+- [x] Para inicializar o server dê `<npm start>`
+- [x] Será executado na porta `8080`
+- [x] Para fazer o commit após contribuições utilize `<git commit -m 'o que foi feito'>`
+- [x] Suba as contribuições através do `<git push origin sua_branch>`
 
 
 
