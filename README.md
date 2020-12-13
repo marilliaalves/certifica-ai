@@ -19,9 +19,9 @@ O certifica aí é um projeto desenvolvido para a conclusão do bootcamp de dese
 - [X] Alterar dados do certificado por ID
 - [X] Deletar um certificado por ID
 
-### Lista ordenada
+### Instruções para utilização da API
 
-- [x] Faça um fork desse [repositório] no seu GitHub (https://github.com/marilliaalves/certifica-ai)
+- [x] Faça um fork desse [repositório](https://github.com/marilliaalves/certifica-ai) no seu GitHub
 - [x] Clone o repositório para sua máquina local - `git clone <url-do-fork-repositório>`
 - [x] Entre na pasta `<cd certifica-ai>` e crie sua branch `<git checkout -b sua_branch>`  
 - [x] Instale as dependências `<npm install>`
@@ -30,11 +30,21 @@ O certifica aí é um projeto desenvolvido para a conclusão do bootcamp de dese
 - [x] Para fazer o commit após contribuições utilize `<git commit -m 'o que foi feito'>`
 - [x] Suba as contribuições através do `<git push origin sua_branch>`
 
-
-
-## Tecnologias usadas
-
-* Git
+### Tecnologias usadas
+* Git/GitHub
 * Node.JS
 * MongoDB
+* Heroku
+
+### Rotas da API
+
+### Participante: 
+|ROTA|MÉTODO UTILIZADO|FUNCIONALIDADE
+| -------- | -------- | -------- 
+|`/certifies`|`GET`|`Retorna todos os certificados`
+|`/certifies/:id`|`GET`|`Retorna certificados por ID`
+|`/certifies/year/:year`|`GET`|`Retorna certificados por ANO`
+|`/certifies`|`POST`|`Inclui novos certificados`
+|`/certifies/:id`|`PUT`|`Altera certificados por ID`
+|`/certifies/:id`|`DELETE`|`Exclui certificados por ID`
 
