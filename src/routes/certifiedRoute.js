@@ -4,11 +4,11 @@ const controller = require("../controllers/certifiedController")
 
 
 router.get("/", controller.getAllCertifies)
-router.get("/certifies/:id", controller.getById)
-router.get("/certifies/year/:year", controller.getYear)
-router.post("/certifies", controller.postCertifies) 
-router.put("/certifies/:id", controller.putCertifies) 
-router.delete("/certifies/:id", controller.deleteId) 
+router.get("/:id", controller.getById)
+router.get("/year/:year", controller.getYear)
+router.post("/", controller.postCertifies) 
+router.put("/:id", controller.putCertifies) 
+router.delete("/:id", controller.deleteId) 
 
 
 
