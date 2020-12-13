@@ -28,6 +28,6 @@ app.use(function (req, res, next) {
 })
 
 app.use("/", index)
-app.use("/certifies/certifies", certifies)
+app.use("/certifies", certifies)
 
 module.exports = app
