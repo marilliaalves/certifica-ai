@@ -38,7 +38,6 @@ O certifica aí é um projeto desenvolvido para a conclusão do bootcamp de dese
 
 ### Rotas da API
 
-### Participante: 
 |ROTA|MÉTODO UTILIZADO|FUNCIONALIDADE
 | -------- | -------- | -------- 
 |`/certifies`|`GET`|`Retorna todos os certificados`
